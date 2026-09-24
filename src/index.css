@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Dark Mode (Default) */
+    --bg-primary: #0A0A0A;
+    --bg-surface: #111111;
+    --bg-surface-elevated: #161616;
+    --border-subtle: #1F1F1F;
+    --border-bright: #2E2E2E;
+    --text-primary: #F5F5F5;
+    --text-secondary: #8A8A8A;
+    --text-tertiary: #555555;
+
+    /* Accents (Strictly <= 3% of viewport) */
+    --accent-amber: #E8B04B;
+    --accent-amber-subtle: rgba(232, 176, 75, 0.12);
+    --accent-amber-glow: rgba(232, 176, 75, 0.25);
+    --accent-sage: #9FB8A3;
+    --accent-sage-subtle: rgba(159, 184, 163, 0.12);
+
+    --font-serif: 'Times New Roman', Times, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    color-scheme: dark;
+  }
+
+  [data-theme="light"] {
+    /* Warm Gallery Off-White */
+    --bg-primary: #FAFAF8;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #F2F2EE;
+    --border-subtle: #E6E6E2;
+    --border-bright: #D1D1CB;
+    --text-primary: #0A0A0A;
+    --text-secondary: #6B6B6B;
+    --text-tertiary: #999994;
+
+    --accent-amber: #C48B27;
+    --accent-amber-subtle: rgba(196, 139, 39, 0.12);
+    --accent-amber-glow: rgba(196, 139, 39, 0.2);
+    --accent-sage: #5E7A63;
+    --accent-sage-subtle: rgba(94, 122, 99, 0.12);
+
+    color-scheme: light;
+  }
+
+  * {
+    border-color: var(--border-subtle);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Hide native cursor on desktop when custom cursor active */
+  @media (hover: hover) and (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
+}
+
+/* Custom Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Hairline 1px border precision */
+.border-hairline {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-subtle);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Subtle Film Grain Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0.035;
+  background-repeat: repeat;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulsing Status Dot */
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+}

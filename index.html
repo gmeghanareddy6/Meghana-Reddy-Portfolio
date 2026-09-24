@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guntuka Meghana Reddy — AI / ML Engineer & Software Developer</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Portfolio of Guntuka Meghana Reddy, B.Tech CSE (AI & ML) student targeting Software Development, Data Science, and Machine Learning engineering roles. Based in Hyderabad, India." />
+    <meta name="keywords" content="Guntuka Meghana Reddy, Meghana Reddy, AI Engineer, Machine Learning, Data Science, Software Developer, Python, NLP, JNTUH, Hyderabad" />
+    <meta name="author" content="Guntuka Meghana Reddy" />
+    <meta name="theme-color" content="#0A0A0A" id="theme-color-meta" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Guntuka Meghana Reddy — AI / ML Engineer & Software Developer" />
+    <meta property="og:description" content="Editorial studio portfolio of Guntuka Meghana Reddy: quiet, confident, and obsessively detailed software and machine learning engineering." />
+    <meta property="og:image" content="/favicon.svg" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Guntuka Meghana Reddy — AI / ML Engineer & Software Developer" />
+    <meta name="twitter:description" content="Editorial studio portfolio of Guntuka Meghana Reddy: quiet, confident, and obsessively detailed software and machine learning engineering." />
+    <meta name="twitter:image" content="/favicon.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Instrument Serif, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Anti-FOUC Theme Initialization Script -->
+    <script>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('portfolio-theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = storedTheme ? storedTheme : (prefersDark ? 'dark' : 'dark'); // Default dark
+          document.documentElement.setAttribute('data-theme', theme);
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-color-meta').setAttribute('content', '#0A0A0A');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('theme-color-meta').setAttribute('content', '#FAFAF8');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-300 selection:bg-[var(--accent-amber)] selection:text-[#0A0A0A]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
