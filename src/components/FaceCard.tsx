@@ -94,7 +94,7 @@ export default function FaceCard() {
           style={{ borderColor: 'var(--border-subtle)' }}
         >
           <img
-            src="/meghana.jpg"
+            src={`${import.meta.env.BASE_URL}meghana.jpg`}
             alt="Guntuka Meghana Reddy"
             className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             loading="eager"

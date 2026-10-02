@@ -18,7 +18,7 @@ export const PERSONAL_INFO = {
     "My engineering practice centers on translating theoretical machine learning architectures into dependable, production-grade tools. From multimodal audio/visual NLP summarizers to clinical healthcare predictors and cyber-threat classification pipelines, I prioritize clean code structure, rigorous data preprocessing, and measurable performance.",
     "Driven by curiosity and systems thinking, I build software that reduces cognitive friction, automates repetitive analysis, and solves critical problems with elegance."
   ],
-  resumeUrl: "/resume.pdf",
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 };
 
 export const STATS: StatItem[] = [
